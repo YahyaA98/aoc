@@ -21,7 +21,7 @@ def part1(data):
             count = 0
         else:
             count = count + int(line)
-    return current_max
+    return max(current_max, count)
 
 
 def part2(data):
@@ -33,7 +33,7 @@ def part2(data):
             count = 0
         else:
             count = count - int(line)
-
+    heappush(h, count)
     return sum(heappop(h) for i in range(3)) * -1
 
 
